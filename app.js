@@ -6,6 +6,24 @@ const middleware = require('./AuthConfig/middleware');
 
 
 
+const path = require('path');
+if (process.env.NODE_ENV === 'production') {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, 'front-end/build')));
+// Handle React routing, return all requests to React app
+  app.get('*', function(req, res) {
+    res.sendFile(path.join(__dirname, 'front-end/build', 'index.html'));
+  });
+}
+
+
+
+
+
+
+
+
+
 // default options
 
 const {authUser, authRole} = require('./AuthConfig/auth/authMiddleware')
@@ -72,6 +90,22 @@ const DB = process.env.DATABASE.replace(
     .then(() => {
       console.log("DB connection: online");
     });
+
+    // ** MIDDLEWARE ** //
+const whitelist = []
+const corsOptions = {
+  origin: function (origin, callback) {
+    console.log("** Origin of request " + origin)
+    if (whitelist.indexOf(origin) !== -1 || !origin) {
+      console.log("Origin acceptable")
+      callback(null, true)
+    } else {
+      console.log("Origin rejected")
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+app.use(cors(corsOptions))
 
 
 module.exports = app;
