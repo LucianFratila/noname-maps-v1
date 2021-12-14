@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans",
+    "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+.map {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+/* .leaflet-container {
+    width: 100vh; 
+    height: 100vh;
+  } */
+.badge {
+  display: inline-block;
+  min-width: 16px; /* pixel unit */
+  padding: 35px 50px; /* pixel unit */
+  border-radius: 50%;
+  font-size: 75px;
+  text-align: center;
+
+  color: #fefefe;
+}
+
+.containerIMG {
+  position: relative;
+  width: 100%;
+}
+
+.image {
+  opacity: 1;
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: 0.5s ease;
+  backface-visibility: hidden;
+}
+
+.middle {
+  transition: 0.5s ease;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+.containerIMG:hover .image {
+  opacity: 0.3;
+}
+
+.containerIMG:hover .middle {
+  opacity: 1;
+}
+
+.text {
+  background-color: #04aa6d;
+  color: white;
+  font-size: 16px;
+  padding: 16px 32px;
+}
