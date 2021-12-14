@@ -4,7 +4,7 @@
   "description": "simple crud express",
   "main": "app.js",
   "scripts": {
-    "start": "set NODE_ENV=dev && nodemon app.js",
+    "start": "node app.js",
     "heroku-postbuild": "cd front-end && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "author": "Lucian Fratila",
