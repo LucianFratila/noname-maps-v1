@@ -72,7 +72,7 @@ exports.uploadIMG = catchAsync(async (req, res, next) => {
   const deleteFiles=()=> {
     // console.log('del executed');
     arr.map((item,index)=>{
-     fs.unlinkSync(`${item.path}`)
+    //  fs.unlinkSync(`${item.path}`)
     })
   }
 

@@ -5,12 +5,12 @@ const {authUser, authRole} = require('../AuthConfig/auth/authMiddleware')
 const multer  = require('multer')
 
 const fileStorageEngine = multer.diskStorage({
-    destination: (req, file, cb) => {
-      cb(null, './misc'); //important this is a direct path fron our current file to storage location
-    },
-    filename: (req, file, cb) => {
-      cb(null, Date.now() + "--" + file.originalname);
-    },
+    // destination: (req, file, cb) => {
+    //   cb(null, './misc'); //important this is a direct path fron our current file to storage location
+    // },
+    // filename: (req, file, cb) => {
+    //   cb(null, Date.now() + "--" + file.originalname);
+    // },
   });
   
 const upload = multer({ storage: fileStorageEngine });
